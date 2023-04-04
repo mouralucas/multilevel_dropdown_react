@@ -8,6 +8,29 @@ export const menuItems = [
         url: '/services',
         submenu: [
             {
+                title: 'Web Development',
+                url: 'web-dev',
+                submenu: [
+                    {
+                        title: 'Frontend',
+                        url: 'frontend',
+                    },
+                    {
+                        title: 'Backend',
+                        submenu: [
+                            {
+                                title: 'NodeJS',
+                                url: 'node',
+                            },
+                            {
+                                title: 'PHP',
+                                url: 'php',
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
                 title: 'web design',
                 url: 'web-design',
             },
@@ -25,27 +48,5 @@ export const menuItems = [
         title: 'About',
         url: '/about',
     },
-    {
-        title: 'Web Development',
-        url: 'web-dev',
-        submenu: [
-            {
-                title: 'Frontend',
-                url: 'frontend',
-            },
-            {
-                title: 'Backend',
-                submenu: [
-                    {
-                        title: 'NodeJS',
-                        url: 'node',
-                    },
-                    {
-                        title: 'PHP',
-                        url: 'php',
-                    },
-                ],
-            },
-        ],
-    },
+
 ];

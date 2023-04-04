@@ -1,7 +1,7 @@
 import Dropdown from './Dropdown';
 import {useState} from "react";
 
-const MenuItems = ({items}) => {
+const MenuItems = ({items, depthLevel}) => {
     const [dropdown, setDropdown] = useState(false);
 
     return (
@@ -11,10 +11,10 @@ const MenuItems = ({items}) => {
                     <button type="button" aria-haspopup="menu"
                             aria-expanded={dropdown ? "true" : "false"}
                             onClick={() => setDropdown((prev) => !prev)}>
-                        {items.title}{' '}
+                        {items.title}{" "}
+                        {depthLevel > 0 ? <span>&raquo;</span> : <span className="arrow" />}
                     </button>
-                    <Dropdown submenus={items.submenu}
-                              dropdown={dropdown} />
+                    <Dropdown submenus={items.submenu} dropdown={dropdown} depthLevel={depthLevel} />
                 </>
             ) : (
                 <a href={items.url}>{items.title}</a>
